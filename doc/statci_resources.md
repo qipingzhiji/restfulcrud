@@ -43,6 +43,17 @@ webjars以jar包的方式引入静态资源
  5. / 当前项目的根路径
  
  + 第三种方式  
+ ```
+    @Bean
+    public WelcomePageHandlerMapping welcomePageHandlerMapping(
+ 				ApplicationContext applicationContext) {
+ 			return new WelcomePageHandlerMapping(
+ 					new TemplateAvailabilityProviders(applicationContext),
+ 					applicationContext, getWelcomePage(),
+ 					this.mvcProperties.getStaticPathPattern());
+ 		}
+
+```
  欢迎页，静态资源的文件夹下的所有index.html页面，被/**映射，也就是说在你访问localhost:8080的时候会去项目静态资源目录下找index.html文件  
 
 + 第四种方式  
