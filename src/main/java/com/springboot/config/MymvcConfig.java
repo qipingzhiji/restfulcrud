@@ -32,7 +32,7 @@ public class MymvcConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public LocaleResolver myLocalResolver() {
+    public LocaleResolver localeResolver() {
         return new MyLocalResolver();
     }
 }
